@@ -42,15 +42,9 @@ char* shrink(char str[])
 
 bool is_palindrome(char str[])
 {
-	int pairs = string_length(str) / 2;
-	int last = string_length(str) - 1;
-	for (int i = 0; i < pairs; i++)
+	for (int i = 0, j = string_length(str) - 1; i < string_length(str) / 2; i++)
 	{
-		if (str[i] == str[last])
-		{
-			last--;
-			continue;
-		}
+		if (str[i] == str[j--]) continue;
 		else return false;
 	}
 	return true;
@@ -73,11 +67,11 @@ void main()
 		cout << i << "\t" << (char)i << endl;
 	}*/
 
-	cout << to_upper(str) << endl;
+	/*cout << to_upper(str) << endl;
 	cout << to_lower(str) << endl;
 	char* str2 = shrink(str);
 	cout << str2 << endl;
-	delete[] str2;
+	delete[] str2;*/
 
 	bool a = is_palindrome(str);
 	cout << a;
